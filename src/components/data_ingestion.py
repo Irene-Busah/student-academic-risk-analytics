@@ -25,19 +25,10 @@ class DataIngestion:
 
         logger.info(f"Loading the Data from the local directory")
 
-        # capture dataframe info as string
-        buffer = io.StringIO()
-        train_data.info(buf=buffer)
-        val_data.info(buf=buffer)
-        test_data.info(buf=buffer)
-
-        info_str = buffer.getvalue()
-
-        with open(self.config.status_file) as file:
-            file.write(f"Training Data Shape: {train_data.shape}")
-            file.write(f"Validation Data Shape: {val_data.shape}")
-            file.write(f"Testing Data Shape: {test_data.shape}")
-
-            file.write(info_str)
+        logger.info(f"Training data shape: {train_data.shape}")
+        logger.info(f"Validation data shape: {val_data.shape}")
+        logger.info(f"Testing data shape: {test_data.shape}")
         
         logger.info("Data Summary Loaded Successfully")
+
+        return train_data, val_data, test_data

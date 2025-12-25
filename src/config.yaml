@@ -4,14 +4,18 @@ artifacts_root: artifacts
 # data loading configuration
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  train_data_file_path: data/train.csv
-  val_data_file_path: data/validation.csv
-  test_data_file_path: data/test.csv
-  status_file: artifacts/data_ingestion/status.txt
+  train_data_file_path: ../data/train.csv
+  val_data_file_path: ../data/validation.csv
+  test_data_file_path: ../data/test.csv
+
+
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  train_data_file_path: data/train.csv
-  val_data_file_path: data/validation.csv
-  test_data_file_path: data/test.csv
+  train_data_file_path: ../data/train.csv
+  val_data_file_path: ../data/validation.csv
+  test_data_file_path: ../data/test.csv
+  categorical_columns: ['Age', 'Grade', 'Gender', 'Race', 'SES_Quartile', 'ParentalEducation', 'SchoolType', 'Locale', 'InternetAccess', 'Extracurricular', 'PartTimeJob', 'ParentSupport', 'Romantic', 'FreeTime', 'GoOut']
+  numerical_columns: ['TestScore_Math', 'TestScore_Reading', 'TestScore_Science', 'GPA', 'AttendanceRate', 'StudyHours']
+  target_column: 'academic_risk'
 

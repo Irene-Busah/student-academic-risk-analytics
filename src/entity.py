@@ -10,8 +10,6 @@ Implements the entities for the various components of the implementation pipelin
 from dataclasses import dataclass
 from pathlib import Path
 
-from matplotlib.pyplot import cla
-
 
 
 # data ingestion entity
@@ -21,7 +19,6 @@ class DataIngestionConfig:
     train_data_file_path: Path
     val_data_file_path: Path
     test_data_file_path: Path
-    status_file: Path
 
 @dataclass
 class DataTransformationConfig:
@@ -29,4 +26,7 @@ class DataTransformationConfig:
     train_data_file_path: Path
     val_data_file_path: Path
     test_data_file_path: Path
+    categorical_columns: list
+    numerical_columns: list
+    target_column: str
 

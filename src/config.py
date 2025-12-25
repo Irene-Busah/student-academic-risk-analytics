@@ -45,8 +45,7 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             train_data_file_path=config.train_data_file_path,
             val_data_file_path=config.val_data_file_path,
-            test_data_file_path=config.test_data_file_path,
-            status_file=config.status_file
+            test_data_file_path=config.test_data_file_path
         )
 
         return data_ingestion_config
@@ -61,13 +60,17 @@ class ConfigurationManager:
 
         config = self.config.data_transformation
 
-        create_dictionaries([config.root_dir])
+        root_dir = Path(config.root_dir)
+        create_dictionaries([root_dir])
 
         data_transformation_config = DataTransformationConfig(
-            root_dir=config.root_dir,
+            root_dir=root_dir,
             train_data_file_path=config.train_data_file_path,
             val_data_file_path=config.val_data_file_path,
-            test_data_file_path=config.test_data_file_path
+            test_data_file_path=config.test_data_file_path,
+            categorical_columns=config.categorical_columns,
+            numerical_columns=config.numerical_columns,
+            target_column=config.target_column
         )
 
         return data_transformation_config

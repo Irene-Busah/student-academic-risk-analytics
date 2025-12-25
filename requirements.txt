@@ -7,3 +7,5 @@ tqdm
 pyYAML
 joblib
 types-PyYAML
+scikit-learn
+mlflow

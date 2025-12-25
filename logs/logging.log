@@ -1,0 +1,17 @@
+[2025-12-25 00:49:22,771: INFO: End-to-end Machine Learning Project]
+[2025-12-25 00:49:22,772: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 00:49:22,772: ERROR: [Errno 2] No such file or directory: 'config.yaml']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 25, in <module>
+    train_df, val_df, test_df = data_ingestion_pipeline.initialize_data_ingestion()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_ingestion_pipeline.py", line 25, in initialize_data_ingestion
+    config = ConfigurationManager()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/config.py", line 28, in __init__
+    self.config = read_yaml(config_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/ensure/main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/utils.py", line 40, in read_yaml
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/utils.py", line 31, in read_yaml
+    with open(file_path) as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'config.yaml'
