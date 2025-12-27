@@ -33,6 +33,9 @@ class DataTransformationPipeline:
             data_transform.fit_encoder(train_data)
             data_transform.fit_scaler(train_data)
 
+            data_transform.save_scaler()
+            data_transform.save_encoders()
+
             train_data = data_transform.encode_categorical_columns(train_data)
             train_data = data_transform.scale_numeric_features(train_data)
 
@@ -60,6 +63,8 @@ class DataTransformationPipeline:
             data_transform.save_transformed_data(
                 test_data, data_transformation_config.root_dir / "test.csv"
             )
+
+            data_transform.save_feature_metadata()
         
         except Exception as e:
             raise e

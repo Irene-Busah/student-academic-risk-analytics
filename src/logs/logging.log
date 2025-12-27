@@ -1,0 +1,1572 @@
+[2025-12-25 02:06:58,648: INFO: End-to-end Machine Learning Project]
+[2025-12-25 02:06:58,648: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 02:06:58,649: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:06:58,649: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 02:07:05,710: INFO: Loading the Data from the local directory]
+[2025-12-25 02:07:05,850: ERROR: 'DataIngestionConfig' object has no attribute 'status_file']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 25, in <module>
+    train_df, val_df, test_df = data_ingestion_pipeline.initialize_data_ingestion()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_ingestion_pipeline.py", line 30, in initialize_data_ingestion
+    return data_ingestion.load_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_ingestion.py", line 36, in load_data
+    with open(self.config.status_file) as file:
+AttributeError: 'DataIngestionConfig' object has no attribute 'status_file'
+[2025-12-25 02:45:59,589: INFO: End-to-end Machine Learning Project]
+[2025-12-25 02:45:59,589: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 02:45:59,591: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:45:59,591: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 02:46:06,693: INFO: Loading the Data from the local directory]
+[2025-12-25 02:46:06,694: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 02:46:06,694: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 02:46:06,694: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 02:46:06,694: INFO: Data Summary Loaded Successfully]
+[2025-12-25 02:46:06,694: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 02:46:06,694: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 02:46:06,695: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:46:06,695: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 02:46:06,695: INFO: Changing Categorical Columns]
+[2025-12-25 02:46:07,718: INFO: Data Type Conversion Complete]
+[2025-12-25 02:46:07,761: INFO: Target Feature Created Successfully - 0          0
+1          1
+2          1
+3          0
+4          0
+          ..
+8000769    1
+8000770    0
+8000771    1
+8000772    0
+8000773    0
+Name: academic_risk, Length: 8000774, dtype: int64]
+[2025-12-25 02:46:07,762: ERROR: __init__() got an unexpected keyword argument 'sparse']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 33, in initialize_data_transformation
+    data_transform.fit_encoder(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 92, in fit_encoder
+    OneHotEncoder(handle_unknown="ignore", sparse=False),
+TypeError: __init__() got an unexpected keyword argument 'sparse'
+[2025-12-25 02:47:43,685: INFO: End-to-end Machine Learning Project]
+[2025-12-25 02:47:43,685: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 02:47:43,686: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:47:43,686: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 02:47:50,671: INFO: Loading the Data from the local directory]
+[2025-12-25 02:47:50,672: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 02:47:50,672: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 02:47:50,672: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 02:47:50,672: INFO: Data Summary Loaded Successfully]
+[2025-12-25 02:47:50,672: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 02:47:50,672: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 02:47:50,673: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:47:50,673: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 02:47:50,673: INFO: Changing Categorical Columns]
+[2025-12-25 02:47:51,705: INFO: Data Type Conversion Complete]
+[2025-12-25 02:47:51,750: INFO: Target Feature Created Successfully - 0          0
+1          1
+2          1
+3          0
+4          0
+          ..
+8000769    1
+8000770    0
+8000771    1
+8000772    0
+8000773    0
+Name: academic_risk, Length: 8000774, dtype: int64]
+[2025-12-25 02:47:56,949: ERROR: 'DataTransformation' object has no attribute 'numeric_cols']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 34, in initialize_data_transformation
+    data_transform.fit_scaler(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 74, in fit_scaler
+    self.scaler.fit(dataframe[self.numeric_cols])
+AttributeError: 'DataTransformation' object has no attribute 'numeric_cols'
+[2025-12-25 02:55:16,199: INFO: End-to-end Machine Learning Project]
+[2025-12-25 02:55:16,199: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 02:55:16,200: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:55:16,200: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 02:55:23,153: INFO: Loading the Data from the local directory]
+[2025-12-25 02:55:23,154: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 02:55:23,154: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 02:55:23,154: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 02:55:23,154: INFO: Data Summary Loaded Successfully]
+[2025-12-25 02:55:23,154: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 02:55:23,154: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 02:55:23,156: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 02:55:23,156: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 02:55:23,156: INFO: Changing Categorical Columns]
+[2025-12-25 02:55:24,183: INFO: Data Type Conversion Complete]
+[2025-12-25 02:55:24,226: INFO: Target Feature Created Successfully]
+[2025-12-25 02:55:29,670: INFO: Scaler Fitting Complete]
+[2025-12-25 02:56:48,691: ERROR: Shape of passed values is (8000774, 1), indices imply (8000774, 51)]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 36, in initialize_data_transformation
+    train_data = data_transform.encode_categorical_columns(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 110, in encode_categorical_columns
+    encoded_df = pd.DataFrame(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/frame.py", line 871, in __init__
+    mgr = ndarray_to_mgr(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 336, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 420, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (8000774, 1), indices imply (8000774, 51)
+[2025-12-25 03:15:53,450: INFO: End-to-end Machine Learning Project]
+[2025-12-25 03:15:53,450: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 03:15:53,452: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:15:53,452: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 03:16:00,373: INFO: Loading the Data from the local directory]
+[2025-12-25 03:16:00,373: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 03:16:00,373: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 03:16:00,373: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 03:16:00,373: INFO: Data Summary Loaded Successfully]
+[2025-12-25 03:16:00,373: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 03:16:00,373: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 03:16:00,375: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:16:00,375: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 03:16:00,375: INFO: Changing Categorical Columns]
+[2025-12-25 03:16:01,402: INFO: Data Type Conversion Complete]
+[2025-12-25 03:16:01,434: INFO: Target Feature Created Successfully]
+[2025-12-25 03:16:01,434: ERROR: __init__() got an unexpected keyword argument 'sparse']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 33, in initialize_data_transformation
+    data_transform.fit_encoder(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 97, in fit_encoder
+    OneHotEncoder(
+TypeError: __init__() got an unexpected keyword argument 'sparse'
+[2025-12-25 03:18:14,369: INFO: End-to-end Machine Learning Project]
+[2025-12-25 03:18:14,369: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 03:18:14,370: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:18:14,370: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 03:18:21,278: INFO: Loading the Data from the local directory]
+[2025-12-25 03:18:21,278: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 03:18:21,278: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 03:18:21,278: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 03:18:21,278: INFO: Data Summary Loaded Successfully]
+[2025-12-25 03:18:21,278: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 03:18:21,278: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 03:18:21,279: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:18:21,279: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 03:18:21,279: INFO: Changing Categorical Columns]
+[2025-12-25 03:18:22,312: INFO: Data Type Conversion Complete]
+[2025-12-25 03:18:22,336: INFO: Target Feature Created Successfully]
+[2025-12-25 03:18:27,608: INFO: Categorical Encoder Fitted Successfully]
+[2025-12-25 03:18:27,778: INFO: Scaler Fitting Complete]
+[2025-12-25 03:18:32,165: ERROR: input_features is not equal to feature_names_in_]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 36, in initialize_data_transformation
+    train_data = data_transform.encode_categorical_columns(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 119, in encode_categorical_columns
+    feature_names = self.preprocessor.get_feature_names_out(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 636, in get_feature_names_out
+    input_features = _check_feature_names_in(self, input_features)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2468, in _check_feature_names_in
+    raise ValueError("input_features is not equal to feature_names_in_")
+ValueError: input_features is not equal to feature_names_in_
+[2025-12-25 03:22:44,335: INFO: End-to-end Machine Learning Project]
+[2025-12-25 03:22:44,336: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 03:22:44,337: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:22:44,337: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 03:22:51,250: INFO: Loading the Data from the local directory]
+[2025-12-25 03:22:51,250: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 03:22:51,250: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 03:22:51,250: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 03:22:51,250: INFO: Data Summary Loaded Successfully]
+[2025-12-25 03:22:51,250: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 03:22:51,250: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 03:22:51,251: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:22:51,252: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 03:22:51,252: INFO: Changing Categorical Columns]
+[2025-12-25 03:22:52,277: INFO: Data Type Conversion Complete]
+[2025-12-25 03:22:52,311: INFO: Target Feature Created Successfully]
+[2025-12-25 03:22:57,591: INFO: Categorical Encoder Fitted Successfully]
+[2025-12-25 03:22:57,758: INFO: Scaler Fitting Complete]
+[2025-12-25 03:24:16,657: ERROR: Shape of passed values is (8000774, 1), indices imply (8000774, 51)]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 36, in initialize_data_transformation
+    train_data = data_transform.encode_categorical_columns(train_data)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/data_transformation.py", line 121, in encode_categorical_columns
+    encoded_df = pd.DataFrame(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/frame.py", line 871, in __init__
+    mgr = ndarray_to_mgr(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 336, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 420, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (8000774, 1), indices imply (8000774, 51)
+[2025-12-25 03:40:41,910: INFO: End-to-end Machine Learning Project]
+[2025-12-25 03:40:41,910: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 03:40:41,911: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:40:41,911: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 03:40:48,764: INFO: Loading the Data from the local directory]
+[2025-12-25 03:40:48,764: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 03:40:48,764: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 03:40:48,765: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 03:40:48,765: INFO: Data Summary Loaded Successfully]
+[2025-12-25 03:40:48,765: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 03:40:48,765: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 03:40:48,766: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:40:48,766: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 03:40:48,766: INFO: Changing Categorical Columns]
+[2025-12-25 03:40:49,788: INFO: Data Type Conversion Complete]
+[2025-12-25 03:40:49,817: INFO: Target Feature Created Successfully]
+[2025-12-25 03:40:56,410: INFO: Categorical Encoder Fitted Successfully]
+[2025-12-25 03:40:56,556: INFO: Scaler Fitting Complete]
+[2025-12-25 03:41:03,620: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:41:06,643: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:41:06,676: INFO: Changing Categorical Columns]
+[2025-12-25 03:41:06,813: INFO: Data Type Conversion Complete]
+[2025-12-25 03:41:06,818: INFO: Target Feature Created Successfully]
+[2025-12-25 03:41:07,611: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:41:07,717: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:41:07,723: INFO: Changing Categorical Columns]
+[2025-12-25 03:41:07,862: INFO: Data Type Conversion Complete]
+[2025-12-25 03:41:07,867: INFO: Target Feature Created Successfully]
+[2025-12-25 03:41:08,667: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:41:08,776: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:41:08,781: ERROR: unsupported operand type(s) for /: 'str' and 'str']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 55, in initialize_data_transformation
+    train_data, data_transformation_config.root_dir / "train.csv"
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+[2025-12-25 03:50:28,648: INFO: End-to-end Machine Learning Project]
+[2025-12-25 03:50:28,648: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 03:50:28,650: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:50:28,650: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 03:50:35,532: INFO: Loading the Data from the local directory]
+[2025-12-25 03:50:35,532: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 03:50:35,532: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 03:50:35,532: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 03:50:35,532: INFO: Data Summary Loaded Successfully]
+[2025-12-25 03:50:35,532: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 03:50:35,532: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 03:50:35,533: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 03:50:35,533: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 03:50:35,533: INFO: Changing Categorical Columns]
+[2025-12-25 03:50:36,565: INFO: Data Type Conversion Complete]
+[2025-12-25 03:50:36,588: INFO: Target Feature Created Successfully]
+[2025-12-25 03:50:43,007: INFO: Categorical Encoder Fitted Successfully]
+[2025-12-25 03:50:43,161: INFO: Scaler Fitting Complete]
+[2025-12-25 03:50:50,261: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:50:53,202: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:50:53,234: INFO: Changing Categorical Columns]
+[2025-12-25 03:50:53,374: INFO: Data Type Conversion Complete]
+[2025-12-25 03:50:53,380: INFO: Target Feature Created Successfully]
+[2025-12-25 03:50:54,166: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:50:54,271: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:50:54,277: INFO: Changing Categorical Columns]
+[2025-12-25 03:50:54,418: INFO: Data Type Conversion Complete]
+[2025-12-25 03:50:54,423: INFO: Target Feature Created Successfully]
+[2025-12-25 03:50:55,210: INFO: Categorical Encoding Complete!]
+[2025-12-25 03:50:55,316: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 03:50:55,321: ERROR: unsupported operand type(s) for /: 'str' and 'str']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 41, in <module>
+    data_transformation_pipeline.initialize_data_transformation(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 65, in initialize_data_transformation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/data_transform_pipeline.py", line 55, in initialize_data_transformation
+    train_data, data_transformation_config.root_dir / "train.csv"
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+[2025-12-25 04:00:06,403: INFO: End-to-end Machine Learning Project]
+[2025-12-25 04:00:06,403: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 04:00:06,404: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 04:00:06,404: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 04:00:13,308: INFO: Loading the Data from the local directory]
+[2025-12-25 04:00:13,308: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 04:00:13,308: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 04:00:13,308: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 04:00:13,308: INFO: Data Summary Loaded Successfully]
+[2025-12-25 04:00:13,308: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 04:00:13,308: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 04:00:13,309: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 04:00:13,310: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 04:00:13,310: INFO: Changing Categorical Columns]
+[2025-12-25 04:00:14,338: INFO: Data Type Conversion Complete]
+[2025-12-25 04:00:14,360: INFO: Target Feature Created Successfully]
+[2025-12-25 04:00:20,942: INFO: Categorical Encoder Fitted Successfully]
+[2025-12-25 04:00:21,113: INFO: Scaler Fitting Complete]
+[2025-12-25 04:00:28,100: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:00:31,064: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:00:31,100: INFO: Changing Categorical Columns]
+[2025-12-25 04:00:31,234: INFO: Data Type Conversion Complete]
+[2025-12-25 04:00:31,239: INFO: Target Feature Created Successfully]
+[2025-12-25 04:00:32,011: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:00:32,114: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:00:32,119: INFO: Changing Categorical Columns]
+[2025-12-25 04:00:32,253: INFO: Data Type Conversion Complete]
+[2025-12-25 04:00:32,258: INFO: Target Feature Created Successfully]
+[2025-12-25 04:00:33,041: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:00:33,148: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:01:58,550: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 04:02:09,340: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 04:02:20,114: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 04:02:20,181: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 04:24:01,564: INFO: End-to-end Machine Learning Project]
+[2025-12-25 04:24:01,564: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 04:24:01,566: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 04:24:01,566: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 04:24:08,787: INFO: Loading the Data from the local directory]
+[2025-12-25 04:24:08,787: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 04:24:08,787: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 04:24:08,787: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 04:24:08,787: INFO: Data Summary Loaded Successfully]
+[2025-12-25 04:24:08,787: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 04:24:08,787: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 04:24:08,789: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 04:24:08,789: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 04:24:08,789: INFO: Changing Categorical Columns]
+[2025-12-25 04:24:09,836: INFO: Data Type Conversion Complete]
+[2025-12-25 04:24:09,880: INFO: Target Feature Created Successfully]
+[2025-12-25 04:24:17,785: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 04:24:17,963: INFO: Scaler Fitting Complete]
+[2025-12-25 04:24:25,327: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:24:25,715: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:24:25,715: INFO: Changing Categorical Columns]
+[2025-12-25 04:24:25,855: INFO: Data Type Conversion Complete]
+[2025-12-25 04:24:25,857: INFO: Target Feature Created Successfully]
+[2025-12-25 04:24:27,274: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:24:27,320: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:24:27,320: INFO: Changing Categorical Columns]
+[2025-12-25 04:24:27,461: INFO: Data Type Conversion Complete]
+[2025-12-25 04:24:27,463: INFO: Target Feature Created Successfully]
+[2025-12-25 04:24:28,888: INFO: Categorical Encoding Complete!]
+[2025-12-25 04:24:28,935: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 04:24:59,956: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 04:25:03,878: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 04:25:07,809: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 04:25:07,836: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:28:29,988: INFO: End-to-end Machine Learning Project]
+[2025-12-25 19:28:29,988: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 19:28:29,993: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:28:29,995: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 19:28:37,631: INFO: Loading the Data from the local directory]
+[2025-12-25 19:28:37,632: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 19:28:37,632: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 19:28:37,632: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 19:28:37,632: INFO: Data Summary Loaded Successfully]
+[2025-12-25 19:28:37,633: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 19:28:37,633: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 19:28:37,634: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:28:37,634: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 19:28:37,634: INFO: Changing Categorical Columns]
+[2025-12-25 19:28:38,674: INFO: Data Type Conversion Complete]
+[2025-12-25 19:28:38,719: INFO: Target Feature Created Successfully]
+[2025-12-25 19:28:46,509: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 19:28:46,682: INFO: Scaler Fitting Complete]
+[2025-12-25 19:28:53,763: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:28:54,095: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:28:54,095: INFO: Changing Categorical Columns]
+[2025-12-25 19:28:54,232: INFO: Data Type Conversion Complete]
+[2025-12-25 19:28:54,235: INFO: Target Feature Created Successfully]
+[2025-12-25 19:28:55,658: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:28:55,704: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:28:55,704: INFO: Changing Categorical Columns]
+[2025-12-25 19:28:55,837: INFO: Data Type Conversion Complete]
+[2025-12-25 19:28:55,840: INFO: Target Feature Created Successfully]
+[2025-12-25 19:28:57,263: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:28:57,307: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:29:28,385: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 19:29:32,288: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 19:29:36,196: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 19:29:36,222: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:29:36,222: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 19:29:36,222: INFO: Starting Model Training Pipeline]
+[2025-12-25 19:29:36,223: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:29:36,224: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 19:29:41,585: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: 'artifacts/data_transformation/validation.csv']
+[2025-12-25 19:29:41,585: ERROR: [Errno 2] No such file or directory: 'artifacts/data_transformation/validation.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 44, in load_transformed_data
+    val_data = pd.read_csv(self.config.val_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_transformation/validation.csv'
+[2025-12-25 19:34:05,904: INFO: End-to-end Machine Learning Project]
+[2025-12-25 19:34:05,904: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 19:34:05,905: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:34:05,905: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 19:34:12,826: INFO: Loading the Data from the local directory]
+[2025-12-25 19:34:12,826: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 19:34:12,826: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 19:34:12,826: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 19:34:12,826: INFO: Data Summary Loaded Successfully]
+[2025-12-25 19:34:12,826: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 19:34:12,826: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 19:34:12,827: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:34:12,827: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 19:34:12,827: INFO: Changing Categorical Columns]
+[2025-12-25 19:34:13,859: INFO: Data Type Conversion Complete]
+[2025-12-25 19:34:13,882: INFO: Target Feature Created Successfully]
+[2025-12-25 19:34:21,586: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 19:34:21,778: INFO: Scaler Fitting Complete]
+[2025-12-25 19:34:29,041: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:34:29,387: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:34:29,387: INFO: Changing Categorical Columns]
+[2025-12-25 19:34:29,529: INFO: Data Type Conversion Complete]
+[2025-12-25 19:34:29,534: INFO: Target Feature Created Successfully]
+[2025-12-25 19:34:30,953: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:34:31,000: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:34:31,000: INFO: Changing Categorical Columns]
+[2025-12-25 19:34:31,156: INFO: Data Type Conversion Complete]
+[2025-12-25 19:34:31,161: INFO: Target Feature Created Successfully]
+[2025-12-25 19:34:32,623: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:34:32,672: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:35:03,781: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 19:35:07,671: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 19:35:11,588: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 19:35:11,614: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:35:11,615: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 19:35:11,615: INFO: Starting Model Training Pipeline]
+[2025-12-25 19:35:11,616: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:35:11,616: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 19:35:11,616: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '/artifacts/data_transformation/train.csv']
+[2025-12-25 19:35:11,616: ERROR: [Errno 2] No such file or directory: '/artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/artifacts/data_transformation/train.csv'
+[2025-12-25 19:44:45,804: INFO: End-to-end Machine Learning Project]
+[2025-12-25 19:44:45,805: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 19:44:45,806: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:44:45,806: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 19:44:52,730: INFO: Loading the Data from the local directory]
+[2025-12-25 19:44:52,730: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 19:44:52,730: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 19:44:52,730: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 19:44:52,730: INFO: Data Summary Loaded Successfully]
+[2025-12-25 19:44:52,730: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 19:44:52,730: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 19:44:52,732: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:44:52,732: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 19:44:52,732: INFO: Changing Categorical Columns]
+[2025-12-25 19:44:53,777: INFO: Data Type Conversion Complete]
+[2025-12-25 19:44:53,804: INFO: Target Feature Created Successfully]
+[2025-12-25 19:45:01,391: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 19:45:01,569: INFO: Scaler Fitting Complete]
+[2025-12-25 19:45:08,892: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:45:09,259: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:45:09,259: INFO: Changing Categorical Columns]
+[2025-12-25 19:45:09,391: INFO: Data Type Conversion Complete]
+[2025-12-25 19:45:09,393: INFO: Target Feature Created Successfully]
+[2025-12-25 19:45:10,812: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:45:10,859: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:45:10,859: INFO: Changing Categorical Columns]
+[2025-12-25 19:45:10,991: INFO: Data Type Conversion Complete]
+[2025-12-25 19:45:10,993: INFO: Target Feature Created Successfully]
+[2025-12-25 19:45:12,425: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:45:12,467: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:45:43,550: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 19:45:47,448: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 19:45:51,336: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 19:45:51,362: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:45:51,362: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 19:45:51,362: INFO: Starting Model Training Pipeline]
+[2025-12-25 19:45:51,364: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:45:51,364: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 19:45:51,365: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: 'src/artifacts/data_transformation/train.csv']
+[2025-12-25 19:45:51,365: ERROR: [Errno 2] No such file or directory: 'src/artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'src/artifacts/data_transformation/train.csv'
+[2025-12-25 19:51:44,237: INFO: End-to-end Machine Learning Project]
+[2025-12-25 19:51:44,237: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 19:51:44,238: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:51:44,239: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 19:51:51,074: INFO: Loading the Data from the local directory]
+[2025-12-25 19:51:51,074: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 19:51:51,074: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 19:51:51,074: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 19:51:51,074: INFO: Data Summary Loaded Successfully]
+[2025-12-25 19:51:51,074: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 19:51:51,074: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 19:51:51,076: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:51:51,076: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 19:51:51,076: INFO: Changing Categorical Columns]
+[2025-12-25 19:51:52,121: INFO: Data Type Conversion Complete]
+[2025-12-25 19:51:52,142: INFO: Target Feature Created Successfully]
+[2025-12-25 19:51:59,761: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 19:51:59,954: INFO: Scaler Fitting Complete]
+[2025-12-25 19:52:07,193: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:52:07,569: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:52:07,569: INFO: Changing Categorical Columns]
+[2025-12-25 19:52:07,708: INFO: Data Type Conversion Complete]
+[2025-12-25 19:52:07,713: INFO: Target Feature Created Successfully]
+[2025-12-25 19:52:09,120: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:52:09,172: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:52:09,172: INFO: Changing Categorical Columns]
+[2025-12-25 19:52:09,311: INFO: Data Type Conversion Complete]
+[2025-12-25 19:52:09,315: INFO: Target Feature Created Successfully]
+[2025-12-25 19:52:10,734: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:52:10,786: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:52:41,717: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 19:52:45,602: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 19:52:49,523: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 19:52:49,549: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:52:49,549: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 19:52:49,549: INFO: Starting Model Training Pipeline]
+[2025-12-25 19:52:49,551: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:52:49,551: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 19:52:49,551: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv']
+[2025-12-25 19:52:49,551: ERROR: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv'
+[2025-12-25 19:54:41,489: INFO: End-to-end Machine Learning Project]
+[2025-12-25 19:54:41,489: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 19:54:41,490: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:54:41,491: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 19:54:48,375: INFO: Loading the Data from the local directory]
+[2025-12-25 19:54:48,375: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 19:54:48,375: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 19:54:48,375: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 19:54:48,375: INFO: Data Summary Loaded Successfully]
+[2025-12-25 19:54:48,375: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 19:54:48,375: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 19:54:48,376: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:54:48,376: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 19:54:48,376: INFO: Changing Categorical Columns]
+[2025-12-25 19:54:49,395: INFO: Data Type Conversion Complete]
+[2025-12-25 19:54:49,417: INFO: Target Feature Created Successfully]
+[2025-12-25 19:54:57,012: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 19:54:57,204: INFO: Scaler Fitting Complete]
+[2025-12-25 19:55:04,550: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:55:04,897: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:55:04,897: INFO: Changing Categorical Columns]
+[2025-12-25 19:55:05,039: INFO: Data Type Conversion Complete]
+[2025-12-25 19:55:05,043: INFO: Target Feature Created Successfully]
+[2025-12-25 19:55:06,494: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:55:06,544: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:55:06,544: INFO: Changing Categorical Columns]
+[2025-12-25 19:55:06,680: INFO: Data Type Conversion Complete]
+[2025-12-25 19:55:06,685: INFO: Target Feature Created Successfully]
+[2025-12-25 19:55:08,141: INFO: Categorical Encoding Complete!]
+[2025-12-25 19:55:08,188: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 19:55:39,397: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 19:55:43,304: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 19:55:47,200: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 19:55:47,227: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 19:55:47,227: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 19:55:47,227: INFO: Starting Model Training Pipeline]
+[2025-12-25 19:55:47,228: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 19:55:47,228: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 19:55:47,229: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '../data_transformation/train.csv']
+[2025-12-25 19:55:47,229: ERROR: [Errno 2] No such file or directory: '../data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../data_transformation/train.csv'
+[2025-12-25 20:08:01,275: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:08:01,275: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:08:01,276: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:08:01,277: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:08:08,110: INFO: Loading the Data from the local directory]
+[2025-12-25 20:08:08,110: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:08:08,110: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:08:08,110: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:08:08,110: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:08:08,110: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:08:08,110: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:08:08,112: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:08:08,112: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:08:08,112: INFO: Changing Categorical Columns]
+[2025-12-25 20:08:09,137: INFO: Data Type Conversion Complete]
+[2025-12-25 20:08:09,163: INFO: Target Feature Created Successfully]
+[2025-12-25 20:08:16,797: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:08:16,986: INFO: Scaler Fitting Complete]
+[2025-12-25 20:08:24,252: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:08:24,604: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:08:24,604: INFO: Changing Categorical Columns]
+[2025-12-25 20:08:24,744: INFO: Data Type Conversion Complete]
+[2025-12-25 20:08:24,749: INFO: Target Feature Created Successfully]
+[2025-12-25 20:08:26,178: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:08:26,226: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:08:26,226: INFO: Changing Categorical Columns]
+[2025-12-25 20:08:26,362: INFO: Data Type Conversion Complete]
+[2025-12-25 20:08:26,367: INFO: Target Feature Created Successfully]
+[2025-12-25 20:08:27,789: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:08:27,835: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:08:58,722: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:09:02,586: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:09:06,471: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:09:06,497: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:09:06,497: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:09:06,497: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:09:06,499: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:09:06,499: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:09:06,499: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv']
+[2025-12-25 20:09:06,499: ERROR: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv'
+[2025-12-25 20:12:58,644: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:12:58,644: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:12:58,645: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:12:58,646: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:13:05,469: INFO: Loading the Data from the local directory]
+[2025-12-25 20:13:05,469: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:13:05,469: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:13:05,469: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:13:05,469: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:13:05,469: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:13:05,469: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:13:05,470: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:13:05,471: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:13:05,471: INFO: Changing Categorical Columns]
+[2025-12-25 20:13:06,498: INFO: Data Type Conversion Complete]
+[2025-12-25 20:13:06,518: INFO: Target Feature Created Successfully]
+[2025-12-25 20:13:14,208: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:13:14,372: INFO: Scaler Fitting Complete]
+[2025-12-25 20:13:21,764: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:13:22,131: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:13:22,131: INFO: Changing Categorical Columns]
+[2025-12-25 20:13:22,269: INFO: Data Type Conversion Complete]
+[2025-12-25 20:13:22,272: INFO: Target Feature Created Successfully]
+[2025-12-25 20:13:23,706: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:13:23,751: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:13:23,752: INFO: Changing Categorical Columns]
+[2025-12-25 20:13:23,889: INFO: Data Type Conversion Complete]
+[2025-12-25 20:13:23,892: INFO: Target Feature Created Successfully]
+[2025-12-25 20:13:25,335: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:13:25,381: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:13:56,275: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:14:00,138: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:14:04,007: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:14:04,033: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:14:04,033: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:14:04,033: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:14:04,035: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:14:04,035: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:14:04,035: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv']
+[2025-12-25 20:14:04,035: ERROR: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'student-academic-risk-analytics/src/artifacts/data_transformation/train.csv'
+[2025-12-25 20:28:42,699: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:28:42,699: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:28:42,700: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:28:42,700: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:28:49,789: INFO: Loading the Data from the local directory]
+[2025-12-25 20:28:49,789: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:28:49,789: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:28:49,789: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:28:49,789: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:28:49,789: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:28:49,789: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:28:49,791: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:28:49,791: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:28:49,791: INFO: Changing Categorical Columns]
+[2025-12-25 20:28:50,843: INFO: Data Type Conversion Complete]
+[2025-12-25 20:28:50,874: INFO: Target Feature Created Successfully]
+[2025-12-25 20:28:58,682: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:28:58,857: INFO: Scaler Fitting Complete]
+[2025-12-25 20:29:06,157: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:29:06,496: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:29:06,496: INFO: Changing Categorical Columns]
+[2025-12-25 20:29:06,637: INFO: Data Type Conversion Complete]
+[2025-12-25 20:29:06,639: INFO: Target Feature Created Successfully]
+[2025-12-25 20:29:08,066: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:29:08,111: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:29:08,111: INFO: Changing Categorical Columns]
+[2025-12-25 20:29:08,247: INFO: Data Type Conversion Complete]
+[2025-12-25 20:29:08,249: INFO: Target Feature Created Successfully]
+[2025-12-25 20:29:09,671: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:29:09,718: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:29:40,840: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:29:44,736: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:29:48,629: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:29:48,654: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:29:48,654: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:29:48,655: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:29:48,656: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:29:48,656: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:29:48,657: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv']
+[2025-12-25 20:29:48,657: ERROR: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 43, in load_transformed_data
+    train_data = pd.read_csv(self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../artifacts/data_transformation/train.csv'
+[2025-12-25 20:39:24,678: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:39:24,678: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:39:24,679: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:39:24,679: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:39:32,048: INFO: Loading the Data from the local directory]
+[2025-12-25 20:39:32,048: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:39:32,048: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:39:32,048: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:39:32,048: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:39:32,048: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:39:32,048: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:39:32,049: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:39:32,049: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:39:32,049: INFO: Changing Categorical Columns]
+[2025-12-25 20:39:33,117: INFO: Data Type Conversion Complete]
+[2025-12-25 20:39:33,157: INFO: Target Feature Created Successfully]
+[2025-12-25 20:39:40,993: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:39:41,170: INFO: Scaler Fitting Complete]
+[2025-12-25 20:39:48,434: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:39:48,769: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:39:48,770: INFO: Changing Categorical Columns]
+[2025-12-25 20:39:48,908: INFO: Data Type Conversion Complete]
+[2025-12-25 20:39:48,911: INFO: Target Feature Created Successfully]
+[2025-12-25 20:39:50,343: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:39:50,387: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:39:50,387: INFO: Changing Categorical Columns]
+[2025-12-25 20:39:50,524: INFO: Data Type Conversion Complete]
+[2025-12-25 20:39:50,526: INFO: Target Feature Created Successfully]
+[2025-12-25 20:39:51,974: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:39:52,018: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:40:23,248: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:40:27,112: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:40:30,988: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:40:31,016: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:40:31,016: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:40:31,016: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:40:31,018: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:40:31,018: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:40:31,018: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/../artifacts/data_transformation/train.csv']
+[2025-12-25 20:40:31,018: ERROR: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/../artifacts/data_transformation/train.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 45, in load_transformed_data
+    train_data = pd.read_csv(PROJECT_ROOT / self.config.train_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/../artifacts/data_transformation/train.csv'
+[2025-12-25 20:41:12,177: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:41:12,177: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:41:12,178: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:41:12,179: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:41:19,352: INFO: Loading the Data from the local directory]
+[2025-12-25 20:41:19,352: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:41:19,352: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:41:19,352: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:41:19,352: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:41:19,352: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:41:19,352: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:41:19,354: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:41:19,354: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:41:19,354: INFO: Changing Categorical Columns]
+[2025-12-25 20:41:20,412: INFO: Data Type Conversion Complete]
+[2025-12-25 20:41:20,433: INFO: Target Feature Created Successfully]
+[2025-12-25 20:41:28,052: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:41:28,209: INFO: Scaler Fitting Complete]
+[2025-12-25 20:41:35,586: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:41:35,963: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:41:35,963: INFO: Changing Categorical Columns]
+[2025-12-25 20:41:36,103: INFO: Data Type Conversion Complete]
+[2025-12-25 20:41:36,106: INFO: Target Feature Created Successfully]
+[2025-12-25 20:41:37,534: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:41:37,583: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:41:37,583: INFO: Changing Categorical Columns]
+[2025-12-25 20:41:37,720: INFO: Data Type Conversion Complete]
+[2025-12-25 20:41:37,724: INFO: Target Feature Created Successfully]
+[2025-12-25 20:41:39,152: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:41:39,197: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:42:10,346: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:42:14,213: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:42:18,092: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:42:18,121: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:42:18,121: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:42:18,121: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:42:18,122: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:42:18,122: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:42:23,503: ERROR: Error in Model Training Pipeline: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/data_transformation/validation.csv']
+[2025-12-25 20:42:23,503: ERROR: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/data_transformation/validation.csv']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 60, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 40, in initiate_model_training
+    train_data, val_data, test_data = model_trainer.load_transformed_data()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 46, in load_transformed_data
+    val_data = pd.read_csv(PROJECT_ROOT / self.config.val_data_file_path)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/data_transformation/validation.csv'
+[2025-12-25 20:43:02,570: INFO: End-to-end Machine Learning Project]
+[2025-12-25 20:43:02,570: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 20:43:02,572: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:43:02,572: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 20:43:09,843: INFO: Loading the Data from the local directory]
+[2025-12-25 20:43:09,843: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 20:43:09,843: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 20:43:09,843: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 20:43:09,843: INFO: Data Summary Loaded Successfully]
+[2025-12-25 20:43:09,844: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 20:43:09,844: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 20:43:09,845: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:43:09,845: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 20:43:09,845: INFO: Changing Categorical Columns]
+[2025-12-25 20:43:10,925: INFO: Data Type Conversion Complete]
+[2025-12-25 20:43:10,948: INFO: Target Feature Created Successfully]
+[2025-12-25 20:43:18,941: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 20:43:19,144: INFO: Scaler Fitting Complete]
+[2025-12-25 20:43:26,633: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:43:27,046: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:43:27,047: INFO: Changing Categorical Columns]
+[2025-12-25 20:43:27,193: INFO: Data Type Conversion Complete]
+[2025-12-25 20:43:27,198: INFO: Target Feature Created Successfully]
+[2025-12-25 20:43:28,656: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:43:28,710: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:43:28,710: INFO: Changing Categorical Columns]
+[2025-12-25 20:43:28,850: INFO: Data Type Conversion Complete]
+[2025-12-25 20:43:28,855: INFO: Target Feature Created Successfully]
+[2025-12-25 20:43:30,345: INFO: Categorical Encoding Complete!]
+[2025-12-25 20:43:30,397: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 20:44:01,804: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 20:44:05,736: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 20:44:09,649: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 20:44:09,676: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 20:44:09,676: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 20:44:09,676: INFO: Starting Model Training Pipeline]
+[2025-12-25 20:44:09,677: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 20:44:09,678: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 20:44:16,400: INFO: Transformed datasets loaded successfully]
+[2025-12-25 21:03:37,727: INFO: Model Training Completed Successfully]
+[2025-12-25 21:03:37,803: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-25 21:03:37,803: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-25 21:03:37,853: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-25 21:53:18,649: INFO: End-to-end Machine Learning Project]
+[2025-12-25 21:53:18,649: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 21:53:18,651: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 21:53:18,651: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 21:53:25,969: INFO: Loading the Data from the local directory]
+[2025-12-25 21:53:25,969: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 21:53:25,969: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 21:53:25,969: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 21:53:25,969: INFO: Data Summary Loaded Successfully]
+[2025-12-25 21:53:25,969: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 21:53:25,969: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 21:53:25,972: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 21:53:25,972: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 21:53:25,972: INFO: Changing Categorical Columns]
+[2025-12-25 21:53:27,012: INFO: Data Type Conversion Complete]
+[2025-12-25 21:53:27,057: INFO: Target Feature Created Successfully]
+[2025-12-25 21:53:34,940: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 21:53:35,116: INFO: Scaler Fitting Complete]
+[2025-12-25 21:53:42,372: INFO: Categorical Encoding Complete!]
+[2025-12-25 21:53:42,727: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 21:53:42,727: INFO: Changing Categorical Columns]
+[2025-12-25 21:53:42,867: INFO: Data Type Conversion Complete]
+[2025-12-25 21:53:42,869: INFO: Target Feature Created Successfully]
+[2025-12-25 21:53:44,307: INFO: Categorical Encoding Complete!]
+[2025-12-25 21:53:44,351: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 21:53:44,351: INFO: Changing Categorical Columns]
+[2025-12-25 21:53:44,483: INFO: Data Type Conversion Complete]
+[2025-12-25 21:53:44,486: INFO: Target Feature Created Successfully]
+[2025-12-25 21:53:45,919: INFO: Categorical Encoding Complete!]
+[2025-12-25 21:53:45,964: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 21:54:17,023: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 21:54:20,921: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 21:54:24,806: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 21:54:24,832: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 21:54:24,832: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-25 21:54:24,832: INFO: Model Evaluation Pipeline Started]
+[2025-12-25 21:54:24,834: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 21:54:24,834: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-25 21:54:24,947: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-25 21:54:25,541: INFO: Evaluation data loaded]
+[2025-12-25 21:54:33,306: INFO: Model evaluation metrics computed]
+[2025-12-25 21:54:35,520: INFO: Metrics and model logged to MLflow]
+[2025-12-25 21:54:35,523: INFO: Model Evaluation Pipeline Completed]
+[2025-12-25 21:54:35,542: INFO: ------------ Model Evaluation Stage Completed ------------]
+[2025-12-25 22:14:22,962: INFO: End-to-end Machine Learning Project]
+[2025-12-25 22:14:22,962: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 22:14:22,963: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 22:14:22,964: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 22:14:30,196: INFO: Loading the Data from the local directory]
+[2025-12-25 22:14:30,197: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 22:14:30,197: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 22:14:30,197: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 22:14:30,197: INFO: Data Summary Loaded Successfully]
+[2025-12-25 22:14:30,197: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 22:14:30,197: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 22:14:30,199: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 22:14:30,199: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 22:14:30,199: INFO: Changing Categorical Columns]
+[2025-12-25 22:14:31,242: INFO: Data Type Conversion Complete]
+[2025-12-25 22:14:31,285: INFO: Target Feature Created Successfully]
+[2025-12-25 22:14:39,130: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 22:14:39,308: INFO: Scaler Fitting Complete]
+[2025-12-25 22:14:46,608: INFO: Categorical Encoding Complete!]
+[2025-12-25 22:14:46,953: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 22:14:46,953: INFO: Changing Categorical Columns]
+[2025-12-25 22:14:47,095: INFO: Data Type Conversion Complete]
+[2025-12-25 22:14:47,097: INFO: Target Feature Created Successfully]
+[2025-12-25 22:14:48,531: INFO: Categorical Encoding Complete!]
+[2025-12-25 22:14:48,576: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 22:14:48,577: INFO: Changing Categorical Columns]
+[2025-12-25 22:14:48,723: INFO: Data Type Conversion Complete]
+[2025-12-25 22:14:48,725: INFO: Target Feature Created Successfully]
+[2025-12-25 22:14:50,161: INFO: Categorical Encoding Complete!]
+[2025-12-25 22:14:50,204: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 22:15:21,089: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 22:15:24,960: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 22:15:28,810: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 22:15:28,836: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 22:15:28,836: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-25 22:15:28,836: INFO: Model Evaluation Pipeline Started]
+[2025-12-25 22:15:28,838: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 22:15:28,838: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-25 22:15:28,950: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-25 22:15:29,546: INFO: Evaluation data loaded]
+[2025-12-25 22:15:37,278: INFO: Model evaluation metrics computed]
+[2025-12-25 22:15:39,391: INFO: Metrics and model logged to MLflow]
+[2025-12-25 22:15:39,394: INFO: Model Evaluation Pipeline Completed]
+[2025-12-25 22:15:39,410: INFO: ------------ Model Evaluation Stage Completed ------------]
+[2025-12-25 23:10:13,330: INFO: End-to-end Machine Learning Project]
+[2025-12-25 23:10:13,331: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-25 23:10:13,332: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 23:10:13,332: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-25 23:10:20,590: INFO: Loading the Data from the local directory]
+[2025-12-25 23:10:20,591: INFO: Training data shape: (8000774, 21)]
+[2025-12-25 23:10:20,591: INFO: Validation data shape: (999229, 21)]
+[2025-12-25 23:10:20,591: INFO: Testing data shape: (999997, 21)]
+[2025-12-25 23:10:20,591: INFO: Data Summary Loaded Successfully]
+[2025-12-25 23:10:20,591: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-25 23:10:20,591: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-25 23:10:20,592: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 23:10:20,593: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-25 23:10:20,593: INFO: Changing Categorical Columns]
+[2025-12-25 23:10:21,633: INFO: Data Type Conversion Complete]
+[2025-12-25 23:10:21,677: INFO: Target Feature Created Successfully]
+[2025-12-25 23:10:29,597: INFO: Label Encoders Fitted Successfully!]
+[2025-12-25 23:10:29,771: INFO: Scaler Fitting Complete]
+[2025-12-25 23:10:37,079: INFO: Categorical Encoding Complete!]
+[2025-12-25 23:10:37,430: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 23:10:37,430: INFO: Changing Categorical Columns]
+[2025-12-25 23:10:37,571: INFO: Data Type Conversion Complete]
+[2025-12-25 23:10:37,574: INFO: Target Feature Created Successfully]
+[2025-12-25 23:10:39,002: INFO: Categorical Encoding Complete!]
+[2025-12-25 23:10:39,045: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 23:10:39,045: INFO: Changing Categorical Columns]
+[2025-12-25 23:10:39,182: INFO: Data Type Conversion Complete]
+[2025-12-25 23:10:39,184: INFO: Target Feature Created Successfully]
+[2025-12-25 23:10:40,608: INFO: Categorical Encoding Complete!]
+[2025-12-25 23:10:40,653: INFO: Numeric Features Scaled Successfully!]
+[2025-12-25 23:11:11,577: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-25 23:11:15,453: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-25 23:11:19,327: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-25 23:11:19,353: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-25 23:11:19,353: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-25 23:11:19,353: INFO: Starting Model Training Pipeline]
+[2025-12-25 23:11:19,355: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 23:11:19,355: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-25 23:11:25,805: INFO: Transformed datasets loaded successfully]
+[2025-12-25 23:11:32,782: INFO: Model Training Completed Successfully]
+[2025-12-25 23:11:32,785: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-25 23:11:32,785: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-25 23:11:32,825: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-25 23:11:32,825: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-25 23:11:32,825: INFO: Model Evaluation Pipeline Started]
+[2025-12-25 23:11:32,846: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-25 23:11:32,846: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-25 23:11:32,846: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-25 23:11:33,449: INFO: Evaluation data loaded]
+[2025-12-25 23:11:33,738: INFO: Model evaluation metrics computed]
+[2025-12-25 23:11:35,546: INFO: Metrics and model logged to MLflow]
+[2025-12-25 23:11:35,547: INFO: Model Evaluation Pipeline Completed]
+[2025-12-25 23:11:35,552: INFO: ------------ Model Evaluation Stage Completed ------------]
+[2025-12-26 04:53:18,384: INFO: End-to-end Machine Learning Project]
+[2025-12-26 04:53:18,384: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 04:53:18,386: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 04:53:18,387: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 04:53:25,522: INFO: Loading the Data from the local directory]
+[2025-12-26 04:53:25,523: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 04:53:25,523: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 04:53:25,523: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 04:53:25,523: INFO: Data Summary Loaded Successfully]
+[2025-12-26 04:53:25,523: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 04:53:25,523: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 04:53:25,525: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 04:53:25,525: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 04:53:25,525: INFO: Changing Categorical Columns]
+[2025-12-26 04:53:26,539: INFO: Data Type Conversion Complete]
+[2025-12-26 04:53:26,583: INFO: Target Feature Created Successfully]
+[2025-12-26 04:53:34,328: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 04:53:34,498: INFO: Scaler Fitting Complete]
+[2025-12-26 04:53:34,499: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 04:53:41,735: INFO: Categorical Encoding Complete!]
+[2025-12-26 04:53:42,100: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 04:53:42,100: INFO: Changing Categorical Columns]
+[2025-12-26 04:53:42,231: INFO: Data Type Conversion Complete]
+[2025-12-26 04:53:42,233: INFO: Target Feature Created Successfully]
+[2025-12-26 04:53:43,642: INFO: Categorical Encoding Complete!]
+[2025-12-26 04:53:43,687: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 04:53:43,687: INFO: Changing Categorical Columns]
+[2025-12-26 04:53:43,820: INFO: Data Type Conversion Complete]
+[2025-12-26 04:53:43,822: INFO: Target Feature Created Successfully]
+[2025-12-26 04:53:45,260: INFO: Categorical Encoding Complete!]
+[2025-12-26 04:53:45,307: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 04:54:16,073: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-26 04:54:19,934: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-26 04:54:23,802: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-26 04:54:23,828: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-26 04:54:23,828: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-26 04:54:23,828: INFO: Starting Model Training Pipeline]
+[2025-12-26 04:54:23,830: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 04:54:23,830: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-26 04:54:30,242: INFO: Transformed datasets loaded successfully]
+[2025-12-26 04:54:36,789: INFO: Model Training Completed Successfully]
+[2025-12-26 04:54:36,790: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-26 04:54:36,790: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-26 04:54:36,832: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-26 04:54:36,832: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-26 04:54:36,832: INFO: Model Evaluation Pipeline Started]
+[2025-12-26 04:54:36,854: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 04:54:36,854: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-26 04:54:36,854: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-26 04:54:37,484: INFO: Evaluation data loaded]
+[2025-12-26 04:54:37,758: INFO: Model evaluation metrics computed]
+[2025-12-26 04:54:39,579: INFO: Metrics and model logged to MLflow]
+[2025-12-26 04:54:39,579: INFO: Model Evaluation Pipeline Completed]
+[2025-12-26 04:54:39,584: INFO: ------------ Model Evaluation Stage Completed ------------]
+[2025-12-26 18:15:45,655: INFO: End-to-end Machine Learning Project]
+[2025-12-26 18:15:45,655: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 18:15:45,657: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 18:15:45,657: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 18:15:53,587: INFO: Loading the Data from the local directory]
+[2025-12-26 18:15:53,588: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 18:15:53,588: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 18:15:53,588: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 18:15:53,588: INFO: Data Summary Loaded Successfully]
+[2025-12-26 18:15:53,588: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 18:15:53,588: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 18:15:53,590: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 18:15:53,590: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 18:15:53,590: INFO: Changing Categorical Columns]
+[2025-12-26 18:15:54,755: INFO: Data Type Conversion Complete]
+[2025-12-26 18:15:54,808: INFO: Target Feature Created Successfully]
+[2025-12-26 18:16:03,013: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 18:16:03,191: INFO: Scaler Fitting Complete]
+[2025-12-26 18:16:03,193: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 18:16:03,193: INFO: Encoders saved at artifacts/data_transformation/label_encoders.joblib]
+[2025-12-26 19:41:05,689: INFO: End-to-end Machine Learning Project]
+[2025-12-26 19:41:05,689: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 19:41:05,691: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 19:41:05,692: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 19:41:12,665: INFO: Loading the Data from the local directory]
+[2025-12-26 19:41:12,666: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 19:41:12,666: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 19:41:12,666: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 19:41:12,666: INFO: Data Summary Loaded Successfully]
+[2025-12-26 19:41:12,666: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 19:41:12,666: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 19:41:12,669: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 19:41:12,669: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 19:41:12,669: INFO: Changing Categorical Columns]
+[2025-12-26 19:41:13,684: INFO: Data Type Conversion Complete]
+[2025-12-26 19:41:13,713: INFO: Target Feature Created Successfully]
+[2025-12-26 19:41:21,319: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 19:41:21,491: INFO: Scaler Fitting Complete]
+[2025-12-26 19:41:21,493: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 19:41:21,494: INFO: Encoders saved at artifacts/data_transformation/label_encoders.joblib]
+[2025-12-26 20:41:44,493: INFO: Categorical Encoding Complete!]
+[2025-12-26 20:41:44,964: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 20:41:44,964: INFO: Changing Categorical Columns]
+[2025-12-26 20:41:45,103: INFO: Data Type Conversion Complete]
+[2025-12-26 20:41:45,105: INFO: Target Feature Created Successfully]
+[2025-12-26 20:49:22,612: INFO: Categorical Encoding Complete!]
+[2025-12-26 20:49:22,661: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 20:49:22,661: INFO: Changing Categorical Columns]
+[2025-12-26 20:49:22,794: INFO: Data Type Conversion Complete]
+[2025-12-26 20:49:22,796: INFO: Target Feature Created Successfully]
+[2025-12-26 20:56:58,885: INFO: Categorical Encoding Complete!]
+[2025-12-26 20:56:58,933: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 20:57:30,337: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-26 20:57:34,297: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-26 20:57:38,261: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-26 20:57:38,261: INFO: Feature metadata saved]
+[2025-12-26 20:57:38,288: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-26 20:57:38,288: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-26 20:57:38,288: INFO: Starting Model Training Pipeline]
+[2025-12-26 20:57:38,290: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 20:57:38,291: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-26 20:57:44,853: INFO: Transformed datasets loaded successfully]
+[2025-12-26 20:57:44,920: INFO: Training with features: ['GPA', 'AttendanceRate', 'TestScore_Math', 'StudyHours', 'ParentalEducation', 'SchoolType', 'Gender']]
+[2025-12-26 20:57:47,911: INFO: Model Training Completed Successfully]
+[2025-12-26 20:57:47,912: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-26 20:57:47,912: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-26 20:57:47,949: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-26 20:57:47,949: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-26 20:57:47,949: INFO: Model Evaluation Pipeline Started]
+[2025-12-26 20:57:47,959: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 20:57:47,960: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-26 20:57:47,960: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-26 20:57:48,616: INFO: Evaluation data loaded]
+[2025-12-26 20:57:48,631: ERROR: Error in Model Evaluation Pipeline]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 33, in initiate_model_evaluation
+    metrics = evaluator.evaluate(model, X_eval, y_eval)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_evaluation.py", line 66, in evaluate
+    y_pred = model.predict(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 374, in predict
+    scores = self.decision_function(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 351, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+
+[2025-12-26 20:57:48,640: ERROR: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 77, in <module>
+    model_evaluation_pipeline.initiate_model_evaluation()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 40, in initiate_model_evaluation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 33, in initiate_model_evaluation
+    metrics = evaluator.evaluate(model, X_eval, y_eval)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_evaluation.py", line 66, in evaluate
+    y_pred = model.predict(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 374, in predict
+    scores = self.decision_function(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 351, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+
+[2025-12-26 21:00:13,925: INFO: End-to-end Machine Learning Project]
+[2025-12-26 21:00:13,925: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 21:00:13,927: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:00:13,927: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 21:00:21,028: INFO: Loading the Data from the local directory]
+[2025-12-26 21:00:21,028: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 21:00:21,028: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 21:00:21,028: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 21:00:21,028: INFO: Data Summary Loaded Successfully]
+[2025-12-26 21:00:21,028: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 21:00:21,028: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 21:00:21,030: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:00:21,030: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 21:00:21,030: INFO: Changing Categorical Columns]
+[2025-12-26 21:00:22,088: INFO: Data Type Conversion Complete]
+[2025-12-26 21:00:22,111: INFO: Target Feature Created Successfully]
+[2025-12-26 21:00:29,454: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 21:00:29,549: INFO: Scaler Fitting Complete]
+[2025-12-26 21:00:29,550: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 21:00:29,551: INFO: Encoders saved at artifacts/data_transformation/label_encoders.joblib]
+[2025-12-26 21:00:32,537: INFO: Categorical columns casted to category dtype]
+[2025-12-26 21:00:32,683: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:00:32,683: INFO: Changing Categorical Columns]
+[2025-12-26 21:00:32,821: INFO: Data Type Conversion Complete]
+[2025-12-26 21:00:32,825: INFO: Target Feature Created Successfully]
+[2025-12-26 21:00:32,828: INFO: Categorical columns casted to category dtype]
+[2025-12-26 21:00:32,843: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:00:32,843: INFO: Changing Categorical Columns]
+[2025-12-26 21:00:32,975: INFO: Data Type Conversion Complete]
+[2025-12-26 21:00:32,978: INFO: Target Feature Created Successfully]
+[2025-12-26 21:00:32,982: INFO: Categorical columns casted to category dtype]
+[2025-12-26 21:00:32,995: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:01:03,588: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-26 21:01:07,625: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-26 21:01:11,719: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-26 21:01:11,719: INFO: Feature metadata saved]
+[2025-12-26 21:01:11,736: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-26 21:01:11,736: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-26 21:01:11,736: INFO: Starting Model Training Pipeline]
+[2025-12-26 21:01:11,738: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:01:11,739: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-26 21:01:19,205: INFO: Transformed datasets loaded successfully]
+[2025-12-26 21:01:19,326: INFO: Training with features: ['GPA', 'AttendanceRate', 'TestScore_Math', 'StudyHours', 'ParentalEducation', 'SchoolType', 'Gender']]
+[2025-12-26 21:01:20,274: ERROR: Error in Model Training Pipeline: could not convert string to float: 'HS']
+[2025-12-26 21:01:20,274: ERROR: could not convert string to float: 'HS']
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 61, in <module>
+    model_training_pipeline.initiate_model_training()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 60, in initiate_model_training
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_training_pipeline.py", line 47, in initiate_model_training
+    model_trainer.train_model(x_train=x_train, y_train=y_train)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_training.py", line 94, in train_model
+    self.model.fit(X=x_train, y=y_train)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py", line 1222, in fit
+    X, y = validate_data(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2961, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1370, in check_X_y
+    X = check_array(
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1055, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 839, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 2171, in __array__
+    arr = np.asarray(values, dtype=dtype)
+ValueError: could not convert string to float: 'HS'
+[2025-12-26 21:33:41,971: INFO: End-to-end Machine Learning Project]
+[2025-12-26 21:33:41,971: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 21:33:41,973: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:33:41,973: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 21:33:48,986: INFO: Loading the Data from the local directory]
+[2025-12-26 21:33:48,986: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 21:33:48,986: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 21:33:48,986: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 21:33:48,986: INFO: Data Summary Loaded Successfully]
+[2025-12-26 21:33:48,986: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 21:33:48,986: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 21:33:48,988: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:33:48,988: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 21:33:48,988: INFO: Changing Categorical Columns]
+[2025-12-26 21:33:50,025: INFO: Data Type Conversion Complete]
+[2025-12-26 21:33:50,056: INFO: Target Feature Created Successfully]
+[2025-12-26 21:33:57,545: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 21:33:57,680: INFO: Scaler Fitting Complete]
+[2025-12-26 21:33:57,681: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 21:33:57,682: INFO: Encoders saved at artifacts/data_transformation/label_encoders.joblib]
+[2025-12-26 21:34:10,988: INFO: Categorical Encoding Complete!]
+[2025-12-26 21:34:11,562: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:34:11,592: INFO: Changing Categorical Columns]
+[2025-12-26 21:34:11,735: INFO: Data Type Conversion Complete]
+[2025-12-26 21:34:11,739: INFO: Target Feature Created Successfully]
+[2025-12-26 21:34:13,789: INFO: Categorical Encoding Complete!]
+[2025-12-26 21:34:13,831: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:34:13,836: INFO: Changing Categorical Columns]
+[2025-12-26 21:34:13,976: INFO: Data Type Conversion Complete]
+[2025-12-26 21:34:13,981: INFO: Target Feature Created Successfully]
+[2025-12-26 21:34:16,052: INFO: Categorical Encoding Complete!]
+[2025-12-26 21:34:16,093: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 21:34:47,108: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-26 21:34:51,002: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-26 21:34:54,965: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-26 21:34:54,966: INFO: Feature metadata saved]
+[2025-12-26 21:34:54,998: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-26 21:34:54,998: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-26 21:34:54,998: INFO: Starting Model Training Pipeline]
+[2025-12-26 21:34:55,000: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:34:55,001: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-26 21:35:03,056: INFO: Transformed datasets loaded successfully]
+[2025-12-26 21:35:03,135: INFO: Training with features: ['GPA', 'AttendanceRate', 'TestScore_Math', 'StudyHours', 'ParentalEducation', 'SchoolType', 'Gender']]
+[2025-12-26 21:35:06,037: INFO: Model Training Completed Successfully]
+[2025-12-26 21:35:06,038: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-26 21:35:06,038: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-26 21:35:06,065: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-26 21:35:06,065: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-26 21:35:06,065: INFO: Model Evaluation Pipeline Started]
+[2025-12-26 21:35:06,075: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 21:35:06,075: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-26 21:35:06,076: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-26 21:35:06,681: INFO: Evaluation data loaded]
+[2025-12-26 21:35:06,695: ERROR: Error in Model Evaluation Pipeline]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 33, in initiate_model_evaluation
+    metrics = evaluator.evaluate(model, X_eval, y_eval)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_evaluation.py", line 66, in evaluate
+    y_pred = model.predict(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 374, in predict
+    scores = self.decision_function(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 351, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+
+[2025-12-26 21:35:06,704: ERROR: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+]
+Traceback (most recent call last):
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/main.py", line 77, in <module>
+    model_evaluation_pipeline.initiate_model_evaluation()
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 40, in initiate_model_evaluation
+    raise e
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/pipeline/model_evaluation_ppipeline.py", line 33, in initiate_model_evaluation
+    metrics = evaluator.evaluate(model, X_eval, y_eval)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/src/components/model_evaluation.py", line 66, in evaluate
+    y_pred = model.predict(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 374, in predict
+    scores = self.decision_function(X)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py", line 351, in decision_function
+    X = validate_data(self, X, accept_sparse="csr", reset=False)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/Users/irenebusah/Desktop/student-academic-risk-analytics/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Age
+- Extracurricular
+- FreeTime
+- GoOut
+- Grade
+- ...
+
+[2025-12-26 23:07:26,284: INFO: End-to-end Machine Learning Project]
+[2025-12-26 23:07:26,284: INFO: ------------ Data Ingestion Stage Started ------------]
+[2025-12-26 23:07:26,286: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 23:07:26,287: INFO: Directory Created Successfully - artifacts/data_ingestion]
+[2025-12-26 23:07:33,304: INFO: Loading the Data from the local directory]
+[2025-12-26 23:07:33,304: INFO: Training data shape: (8000774, 21)]
+[2025-12-26 23:07:33,304: INFO: Validation data shape: (999229, 21)]
+[2025-12-26 23:07:33,304: INFO: Testing data shape: (999997, 21)]
+[2025-12-26 23:07:33,304: INFO: Data Summary Loaded Successfully]
+[2025-12-26 23:07:33,304: INFO: ------------ Data Ingestion Stage Completed ------------]
+[2025-12-26 23:07:33,304: INFO: ------------ Data Transformation Stage Started ------------]
+[2025-12-26 23:07:33,306: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 23:07:33,306: INFO: Directory Created Successfully - artifacts/data_transformation]
+[2025-12-26 23:07:33,306: INFO: Changing Categorical Columns]
+[2025-12-26 23:07:34,357: INFO: Data Type Conversion Complete]
+[2025-12-26 23:07:34,386: INFO: Target Feature Created Successfully]
+[2025-12-26 23:07:42,073: INFO: Label Encoders Fitted Successfully!]
+[2025-12-26 23:07:42,202: INFO: Scaler Fitting Complete]
+[2025-12-26 23:07:42,203: INFO: Scaler saved at artifacts/data_transformation/scaler.joblib]
+[2025-12-26 23:07:42,203: INFO: Encoders saved at artifacts/data_transformation/label_encoders.joblib]
+[2025-12-26 23:07:56,097: INFO: Categorical Encoding Complete!]
+[2025-12-26 23:07:56,688: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 23:07:56,718: INFO: Changing Categorical Columns]
+[2025-12-26 23:07:56,862: INFO: Data Type Conversion Complete]
+[2025-12-26 23:07:56,867: INFO: Target Feature Created Successfully]
+[2025-12-26 23:07:58,991: INFO: Categorical Encoding Complete!]
+[2025-12-26 23:07:59,037: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 23:07:59,042: INFO: Changing Categorical Columns]
+[2025-12-26 23:07:59,186: INFO: Data Type Conversion Complete]
+[2025-12-26 23:07:59,191: INFO: Target Feature Created Successfully]
+[2025-12-26 23:08:01,307: INFO: Categorical Encoding Complete!]
+[2025-12-26 23:08:01,349: INFO: Numeric Features Scaled Successfully!]
+[2025-12-26 23:08:32,239: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/train.csv]
+[2025-12-26 23:08:36,082: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/val.csv]
+[2025-12-26 23:08:39,944: INFO: Successfully Saved the Transformed Data - artifacts/data_transformation/test.csv]
+[2025-12-26 23:08:39,945: INFO: Feature metadata saved]
+[2025-12-26 23:08:39,976: INFO: ------------ Data Transformation Stage Completed ------------]
+[2025-12-26 23:08:39,976: INFO: ------------ Model Training Stage Started ------------]
+[2025-12-26 23:08:39,976: INFO: Starting Model Training Pipeline]
+[2025-12-26 23:08:39,978: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 23:08:39,979: INFO: Directory Created Successfully - artifacts/model_training]
+[2025-12-26 23:08:46,059: INFO: Transformed datasets loaded successfully]
+[2025-12-26 23:08:46,136: INFO: Training with features: ['GPA', 'AttendanceRate', 'TestScore_Math', 'StudyHours', 'ParentalEducation', 'SchoolType', 'Gender']]
+[2025-12-26 23:08:49,026: INFO: Model Training Completed Successfully]
+[2025-12-26 23:08:49,027: INFO: Model Saved Successfully - artifacts/model_training/model.joblib]
+[2025-12-26 23:08:49,027: INFO: Model Training Pipeline Completed Successfully]
+[2025-12-26 23:08:49,056: INFO: ------------ Model Training Stage Completed ------------]
+[2025-12-26 23:08:49,057: INFO: ------------ Model Evaluation Stage Started ------------]
+[2025-12-26 23:08:49,057: INFO: Model Evaluation Pipeline Started]
+[2025-12-26 23:08:49,066: INFO: Successfully loaded the YAML file: config.yaml]
+[2025-12-26 23:08:49,066: INFO: Directory Created Successfully - artifacts/model_evaluation]
+[2025-12-26 23:08:49,067: INFO: Model loaded from /Users/irenebusah/Desktop/student-academic-risk-analytics/src/artifacts/model_training/model.joblib]
+[2025-12-26 23:08:49,660: INFO: Evaluation data loaded]
+[2025-12-26 23:08:49,665: INFO: Using evaluation features: ['GPA', 'AttendanceRate', 'TestScore_Math', 'StudyHours', 'ParentalEducation', 'SchoolType', 'Gender']]
+[2025-12-26 23:08:49,917: INFO: Model evaluation metrics computed]
+[2025-12-26 23:08:51,767: INFO: Metrics and model logged to MLflow]
+[2025-12-26 23:08:51,768: INFO: Model Evaluation Pipeline Completed]
+[2025-12-26 23:08:51,774: INFO: ------------ Model Evaluation Stage Completed ------------]

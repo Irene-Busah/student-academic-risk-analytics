@@ -1,4 +1,7 @@
 venv/
 data/
-src/logs/
-src/artifacts/data_transformation/*
+src/artifacts/data_transformation/train.csv
+src/artifacts/data_transformation/test.csv
+src/artifacts/data_transformation/val.csv
+
+mlruns/

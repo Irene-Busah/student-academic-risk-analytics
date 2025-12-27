@@ -6,7 +6,7 @@ Implements the data transformation components
 """
 
 
-import logging
+
 import scipy as sp
 from logger import logger
 from entity import DataTransformationConfig
@@ -28,7 +28,8 @@ class DataTransformation:
         :type config: DataTransformationConfig
         """
         self.config = config
-        self.encoders = {}  # To store LabelEncoder for each categorical column
+        self.encoders = {} 
+        self.scaler = None
 
     def cast_categorical_columns(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -82,6 +83,7 @@ class DataTransformation:
         :return: Dataframe with scaled numerical features
         :rtype: pd.DataFrame
         """
+
         dataframe = dataframe.copy()
         dataframe[self.config.numerical_columns] = self.scaler.transform(dataframe[self.config.numerical_columns])
         logger.info("Numeric Features Scaled Successfully!")
@@ -100,6 +102,19 @@ class DataTransformation:
             le.fit(dataframe[col])
             self.encoders[col] = le
         logger.info("Label Encoders Fitted Successfully!")
+    
+
+
+    def save_scaler(self):
+        """
+        Saves the fitted scaler to disk
+        """
+
+        scaler_path = Path(self.config.root_dir) / "scaler.joblib"
+        joblib.dump(self.scaler, scaler_path)
+
+        logger.info(f"Scaler saved at {scaler_path}")
+
 
     def encode_categorical_columns(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         """
@@ -110,10 +125,22 @@ class DataTransformation:
         :return: Dataframe with encoded categorical features
         :rtype: pd.DataFrame
         """
+
+        dataframe = dataframe.copy()
+
         for col, le in self.encoders.items():
-            dataframe[col] = le.transform(dataframe[col].astype(str))
+            dataframe[col] = dataframe[col].astype(str)
+
+            known = dataframe[col].isin(le.classes_)
+            dataframe.loc[known, col] = le.transform(dataframe.loc[known, col])
+            dataframe.loc[~known, col] = -1
+
+            dataframe[col] = dataframe[col].astype(int)
+
         logger.info("Categorical Encoding Complete!")
         return dataframe
+    
+
 
     def save_transformed_data(self, dataframe: pd.DataFrame, file_path: Path):
         """
@@ -127,3 +154,23 @@ class DataTransformation:
         file_path.parent.mkdir(parents=True, exist_ok=True)
         dataframe.to_csv(file_path, index=False)
         logger.info(f"Successfully Saved the Transformed Data - {file_path}")
+
+    
+    def save_encoders(self):
+        encoders_path = Path(self.config.root_dir) / "label_encoders.joblib"
+        joblib.dump(self.encoders, encoders_path)
+        logger.info(f"Encoders saved at {encoders_path}")
+
+    
+    def save_feature_metadata(self):
+        metadata = {
+            "categorical_columns": self.config.categorical_columns,
+            "numerical_columns": self.config.numerical_columns,
+            "target_column": self.config.target_column
+        }
+
+        metadata_path = Path(self.config.root_dir) / "feature_metadata.joblib"
+        joblib.dump(metadata, metadata_path)
+
+        logger.info("Feature metadata saved")
+

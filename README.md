@@ -94,3 +94,82 @@ Python, Pandas, NumPy, Scikit-learn, MLflow, Apache Airflow, SHAP, FastAPI, Dock
   - requirements.txt
   - Dockerfile
   - README.md
+
+
+## How to Run the Project
+
+### 1. Clone the Repository
+```bash
+git clone git@github.com:Irene-Busah/student-academic-risk-analytics.git
+```
+
+```bash
+cd student-academic-risk-analytics
+```
+
+### 2. Set Up the Python Environment
+```bash
+python -m venv venv
+source venv/bin/activate  # macOS / Linux
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the End-to-End Pipeline
+```bash
+cd src/
+
+python main.py
+```
+
+### 5. Start the API Server
+```bash
+uvicorn api.app:app --reload
+```
+- Base URL: ```http://127.0.0.1:8000```
+
+- Swagger Docs: ```http://127.0.0.1:8000/docs```
+
+### 6. Make a Prediction 
+```http://127.0.0.1:8000/predict```
+
+```bash
+{
+  "GPA": 2.4,
+  "AttendanceRate": 0.82,
+  "TestScore_Math": 78,
+  "TestScore_English": 85,
+  "StudyHoursPerWeek": 12,
+  "ParentalEducation": "HS",
+  "SchoolType": "Public",
+  "Gender": "Female"
+}
+```
+
+Example Response
+
+```bash
+{
+  "academic_risk": 0,
+  "probability": 0.12
+}
+```
+
+
+### 8. Notes
+
+- Categorical features are automatically encoded using saved label encoders.
+
+- Numerical features are scaled using the saved scaler.
+
+- Ensure the artifacts/data_transformation directory contains:
+
+  ```scaler.joblib```
+
+  ```label_encoders.joblib```
+
+  ```feature_metadata.joblib```
+

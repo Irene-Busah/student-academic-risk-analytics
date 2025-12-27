@@ -15,7 +15,63 @@ data_transformation:
   train_data_file_path: ../data/train.csv
   val_data_file_path: ../data/validation.csv
   test_data_file_path: ../data/test.csv
-  categorical_columns: ['Age', 'Grade', 'Gender', 'Race', 'SES_Quartile', 'ParentalEducation', 'SchoolType', 'Locale', 'InternetAccess', 'Extracurricular', 'PartTimeJob', 'ParentSupport', 'Romantic', 'FreeTime', 'GoOut']
-  numerical_columns: ['TestScore_Math', 'TestScore_Reading', 'TestScore_Science', 'GPA', 'AttendanceRate', 'StudyHours']
+
+  categorical_columns:
+    - Age
+    - Grade
+    - Gender
+    - Race
+    - SES_Quartile
+    - ParentalEducation
+    - SchoolType
+    - Locale
+    - InternetAccess
+    - Extracurricular
+    - PartTimeJob
+    - ParentSupport
+    - Romantic
+    - FreeTime
+    - GoOut
+
+  numerical_columns:
+    - GPA
+    - AttendanceRate
+    - TestScore_Math
+    - StudyHours
+
+  target_column: academic_risk
+
+
+model_training:
+  root_dir: artifacts/model_training
+  train_data_file_path: artifacts/data_transformation/train.csv
+  val_data_file_path: artifacts/data_transformation/val.csv
+  test_data_file_path: artifacts/data_transformation/test.csv
+
+  model_name: model.joblib
+  target_column: academic_risk
+
+  model_features:
+    - GPA
+    - AttendanceRate
+    - TestScore_Math
+    - StudyHours
+    - ParentalEducation
+    - SchoolType
+    - Gender
+
+  scaled_features:
+    - GPA
+    - AttendanceRate
+    - TestScore_Math
+    - StudyHours
+
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  model_path: artifacts/model_training/model.joblib
+  eval_data_file_path: artifacts/data_transformation/test.csv
   target_column: 'academic_risk'
+  mlflow_experiment_name: 'academic-risk-evaluation'
+
 

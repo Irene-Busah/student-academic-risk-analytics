@@ -11,6 +11,8 @@ Sets up the entire project pipeline
 from logger import logger
 from pipeline.data_ingestion_pipeline import DataIngestionPipeline
 from pipeline.data_transform_pipeline import DataTransformationPipeline
+from pipeline.model_training_pipeline import ModelTrainingPipeline
+from pipeline.model_evaluation_ppipeline import ModelEvaluationPipeline
 
 logger.info("End-to-end Machine Learning Project")
 
@@ -46,4 +48,37 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
+
+
+
+# ====================== Model Training ======================
+
+STAGE_NAME = "Model Training Stage"
+
+try:
+    logger.info(f"------------ {STAGE_NAME} Started ------------")
+    model_training_pipeline = ModelTrainingPipeline()
+    model_training_pipeline.initiate_model_training()
+    logger.info(f"------------ {STAGE_NAME} Completed ------------")
+
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+
+# ====================== Model Evaluation ======================
+
+STAGE_NAME = "Model Evaluation Stage"
+
+try:
+    logger.info(f"------------ {STAGE_NAME} Started ------------")
+    model_evaluation_pipeline = ModelEvaluationPipeline()
+    model_evaluation_pipeline.initiate_model_evaluation()
+    logger.info(f"------------ {STAGE_NAME} Completed ------------")
+
+except Exception as e:
+    logger.exception(e)
+    raise e
+
 
